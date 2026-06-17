@@ -4,11 +4,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def root():
-    with open("version.txt", r) as file:
+    with open("version.txt") as file:
         version = file.read().strip()
 
     return render_template(
-        "index.html"
+        "index.html",
         version=version,
     )
 
